@@ -32,7 +32,7 @@ function Savefile:load()
     local defaultsPath = 'system/savefile-data.lua'
     local defaultData = love.filesystem.load(defaultsPath)()
 
-    if love.filesystem.exists(self.saveFile) then
+    if love.filesystem.getInfo(self.saveFile) then
         -- there is a savefile, so use that instead
         local serialisedData = love.filesystem.read(self.saveFile)
         logger.debug(

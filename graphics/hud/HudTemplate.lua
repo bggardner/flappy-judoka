@@ -38,10 +38,10 @@ function HudTemplate:new()
     self.HINT_FONT_SIZE = 30
 
     -- defining colors
-    self.WHITE = {255, 255, 255}
+    self.WHITE = {1, 1, 1}
     self.BLACK = {0, 0, 0}
-    self.GRAY = {150, 150, 150}
-    self.ORANGE = {255, 132, 42}
+    self.GRAY = {150 / 255, 150 / 255, 150 / 255}
+    self.ORANGE = {255 / 255, 132 / 255, 42 / 255}
 
     -- parameters defining the Y position of the texts
     self.CONTROLS_HINT_X = 0.03

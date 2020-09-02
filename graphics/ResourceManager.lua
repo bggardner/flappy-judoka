@@ -81,7 +81,7 @@ function load(self)
     self.PIPE_BODY_IMAGE = utils.loadImage('yellow-cable-body')
     self.PIPE_BODY_IMAGE:setFilter('nearest', 'nearest')
 
-    self.BACKGROUND_DAY_COLOR = {50, 195, 223}  -- r, g, b
+    self.BACKGROUND_DAY_COLOR = {50 / 255, 195 / 255, 223 / 255}  -- r, g, b
     self.BACKGROUND_DAY_IMAGE = utils.loadImage('background')
     self.BACKGROUND_DAY_IMAGE:setFilter('nearest', 'nearest')
 
