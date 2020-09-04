@@ -157,17 +157,21 @@ end
 function Utils.profileSaveAppStateVariable(key, value)
     if not Utils.fileExists('/usr/bin/kano-tracker-ctl') then
         print('Tracking tool not found!')
-        return
+    end
+    local statePath = os.getenv("HOME") .. '/.kanoprofile/apps/love-minigames'
+    local stateFile = statePath .. '/state.json'
+    if not Utils.fileExists(stateFile) then
+        os.execute('mkdir -p ' .. statePath .. ' && echo "{}" > ' .. stateFile)
     end
     if type(value) == 'number' then
         os.execute(
-            'kano-profile-cli save_app_state_variable love-minigames ' .. key .. ' ' ..
-            value
+            'jq .' .. key .. '=' .. value .. ' ' .. stateFile .. ' > ' .. stateFile ..
+            '.tmp && mv ' .. stateFile .. '.tmp ' .. stateFile
         )
     elseif type(value) == 'string' then
         os.execute(
-            "kano-profile-cli save_app_state_variable love-minigames " .. key .. " \"" ..
-            value .. "\""
+            'jq .' .. key .. '="' .. value .. '" ' .. stateFile .. ' > ' .. stateFile ..
+            '.tmp && mv ' .. stateFile .. '.tmp ' .. stateFile
         )
     else
         print(
