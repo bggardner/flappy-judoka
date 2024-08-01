@@ -1,5 +1,5 @@
 # FlappyJudoka
-This mini-game is included as part of the abandoned Kano OS in the (love-minigames)[http://dev.kano.me/archive-stretch/pool/main/l/love-minigames/love-minigames_4.0.0-0.20180420build1_all.deb] package.
+This mini-game is included as part of the abandoned Kano OS in the (love-minigames)[http://repo.kano.me/archive-stretch/pool/main/l/love-minigames/love-minigames_4.0.0-0.20180420build1_all.deb] package.
 
 # Installation
 ```
